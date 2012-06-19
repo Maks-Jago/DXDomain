@@ -29,7 +29,7 @@
     
     UniversalCoding *cod = [UniversalCoding new];
     
-    NSMutableArray* propertyArray = [cod getPropertys:[TestClass new]];
+    NSArray* propertyArray = [cod getPropertys:[TestClass new]];
                 
     return YES;
 }

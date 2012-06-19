@@ -10,7 +10,7 @@
 
 @implementation UniversalCoding
 
-- (NSMutableArray*)getPropertys:(id) object
+- (NSArray*)getPropertys:(id) object
 {
     NSParameterAssert(object);
     NSMutableArray* propertyArray = [NSMutableArray array];
@@ -21,7 +21,7 @@
         NSString* propertyName = [[[NSString alloc] initWithUTF8String:property_getName(properties[i])] autorelease];
         [propertyArray addObject:(id)propertyName];
     }
-    return propertyArray;
+    return [[NSArray alloc] initWithArray:propertyArray];
 }
 
 @end
