@@ -12,7 +12,6 @@
 @interface UniversalCoding : NSObject
 
 
-
-- (NSMutableArray*)getProperty:(id) object;
+- (NSMutableArray*)getPropertys:(id) object;
 
 @end

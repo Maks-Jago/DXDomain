@@ -10,12 +10,18 @@
 
 @implementation UniversalCoding
 
-- (NSMutableArray*)getProperty:(id) object
+- (NSMutableArray*)getPropertys:(id) object
 {
-    NSMutableArray* property = [NSMutableArray array];
-    unsigned int *outCount = 0;
-    objc_property_t *tt = class_copyPropertyList(object, outCount);
-
+    NSParameterAssert(object);
+    NSMutableArray* propertyArray = [NSMutableArray array];
+    uint outCount = 0;
+    objc_property_t *properties = class_copyPropertyList([object class], &outCount);
+    for (int i=0; i<outCount; i++) 
+    {
+        NSString* propertyName = [[[NSString alloc] initWithUTF8String:property_getName(properties[i])] autorelease];
+        [propertyArray addObject:(id)propertyName];
+    }
+    return propertyArray;
 }
 
 @end

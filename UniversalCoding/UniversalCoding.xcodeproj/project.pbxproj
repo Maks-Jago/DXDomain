@@ -19,6 +19,7 @@
 		2DD7C08F1590D3F400D6BB43 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DD7C08D1590D3F400D6BB43 /* InfoPlist.strings */; };
 		2DD7C0921590D3F400D6BB43 /* UniversalCodingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7C0911590D3F400D6BB43 /* UniversalCodingTests.m */; };
 		2DD7C09D1590D46600D6BB43 /* UniversalCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7C09C1590D46600D6BB43 /* UniversalCoding.m */; };
+		2DD7C0A01590DBAC00D6BB43 /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7C09F1590DBAC00D6BB43 /* TestClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		2DD7C0911590D3F400D6BB43 /* UniversalCodingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UniversalCodingTests.m; sourceTree = "<group>"; };
 		2DD7C09B1590D46600D6BB43 /* UniversalCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalCoding.h; sourceTree = "<group>"; };
 		2DD7C09C1590D46600D6BB43 /* UniversalCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalCoding.m; sourceTree = "<group>"; };
+		2DD7C09E1590DBAC00D6BB43 /* TestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
+		2DD7C09F1590DBAC00D6BB43 /* TestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +114,11 @@
 			children = (
 				2DD7C07B1590D3F400D6BB43 /* AppDelegate.h */,
 				2DD7C07C1590D3F400D6BB43 /* AppDelegate.m */,
-				2DD7C0731590D3F400D6BB43 /* Supporting Files */,
 				2DD7C09B1590D46600D6BB43 /* UniversalCoding.h */,
 				2DD7C09C1590D46600D6BB43 /* UniversalCoding.m */,
+				2DD7C09E1590DBAC00D6BB43 /* TestClass.h */,
+				2DD7C09F1590DBAC00D6BB43 /* TestClass.m */,
+				2DD7C0731590D3F400D6BB43 /* Supporting Files */,
 			);
 			path = UniversalCoding;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				2DD7C0791590D3F400D6BB43 /* main.m in Sources */,
 				2DD7C07D1590D3F400D6BB43 /* AppDelegate.m in Sources */,
 				2DD7C09D1590D46600D6BB43 /* UniversalCoding.m in Sources */,
+				2DD7C0A01590DBAC00D6BB43 /* TestClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "UniversalCoding.h"
+#import "TestClass.h"
 
 @implementation AppDelegate
 
@@ -28,8 +29,8 @@
     
     UniversalCoding *cod = [UniversalCoding new];
     
-    [cod getProperty:[NSObject new]];
-    
+    NSMutableArray* propertyArray = [cod getPropertys:[TestClass new]];
+                
     return YES;
 }
 

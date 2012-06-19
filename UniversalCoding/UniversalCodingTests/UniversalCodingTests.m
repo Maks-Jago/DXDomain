@@ -7,26 +7,29 @@
 //
 
 #import "UniversalCodingTests.h"
+#import "UniversalCoding.h"
 
 @implementation UniversalCodingTests
+{
+    UniversalCoding *cod;
+}
 
 - (void)setUp
 {
     [super setUp];
-    
-    // Set-up code here.
+    cod = [UniversalCoding new];
 }
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    
+    [cod release];
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testGetProperty
 {
-    STFail(@"Unit tests are not implemented yet in UniversalCodingTests");
+    STAssertThrows([cod getPropertys:nil],@"should throw exceprion!!!");
+    STAssertNoThrow([cod getPropertys:[NSString new]],@"should not throw exception!!!");
 }
 
 @end
