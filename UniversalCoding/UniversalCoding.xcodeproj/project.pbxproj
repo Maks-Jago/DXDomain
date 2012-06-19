@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2DD7C06D1590D3F400D6BB43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD7C06C1590D3F400D6BB43 /* UIKit.framework */; };
+		2DD7C06F1590D3F400D6BB43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD7C06E1590D3F400D6BB43 /* Foundation.framework */; };
+		2DD7C0711590D3F400D6BB43 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD7C0701590D3F400D6BB43 /* CoreGraphics.framework */; };
+		2DD7C0771590D3F400D6BB43 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DD7C0751590D3F400D6BB43 /* InfoPlist.strings */; };
+		2DD7C0791590D3F400D6BB43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7C0781590D3F400D6BB43 /* main.m */; };
+		2DD7C07D1590D3F400D6BB43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7C07C1590D3F400D6BB43 /* AppDelegate.m */; };
+		2DD7C0851590D3F400D6BB43 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD7C0841590D3F400D6BB43 /* SenTestingKit.framework */; };
+		2DD7C0861590D3F400D6BB43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD7C06C1590D3F400D6BB43 /* UIKit.framework */; };
+		2DD7C0871590D3F400D6BB43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD7C06E1590D3F400D6BB43 /* Foundation.framework */; };
+		2DD7C08F1590D3F400D6BB43 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DD7C08D1590D3F400D6BB43 /* InfoPlist.strings */; };
+		2DD7C0921590D3F400D6BB43 /* UniversalCodingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7C0911590D3F400D6BB43 /* UniversalCodingTests.m */; };
+		2DD7C09D1590D46600D6BB43 /* UniversalCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7C09C1590D46600D6BB43 /* UniversalCoding.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2DD7C0881590D3F400D6BB43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2DD7C05F1590D3F400D6BB43 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DD7C0671590D3F400D6BB43;
+			remoteInfo = UniversalCoding;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2DD7C0681590D3F400D6BB43 /* UniversalCoding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalCoding.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DD7C06C1590D3F400D6BB43 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2DD7C06E1590D3F400D6BB43 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2DD7C0701590D3F400D6BB43 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2DD7C0741590D3F400D6BB43 /* UniversalCoding-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UniversalCoding-Info.plist"; sourceTree = "<group>"; };
+		2DD7C0761590D3F400D6BB43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2DD7C0781590D3F400D6BB43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2DD7C07A1590D3F400D6BB43 /* UniversalCoding-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UniversalCoding-Prefix.pch"; sourceTree = "<group>"; };
+		2DD7C07B1590D3F400D6BB43 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2DD7C07C1590D3F400D6BB43 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2DD7C0831590D3F400D6BB43 /* UniversalCodingTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversalCodingTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DD7C0841590D3F400D6BB43 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		2DD7C08C1590D3F400D6BB43 /* UniversalCodingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UniversalCodingTests-Info.plist"; sourceTree = "<group>"; };
+		2DD7C08E1590D3F400D6BB43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2DD7C0901590D3F400D6BB43 /* UniversalCodingTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniversalCodingTests.h; sourceTree = "<group>"; };
+		2DD7C0911590D3F400D6BB43 /* UniversalCodingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UniversalCodingTests.m; sourceTree = "<group>"; };
+		2DD7C09B1590D46600D6BB43 /* UniversalCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniversalCoding.h; sourceTree = "<group>"; };
+		2DD7C09C1590D46600D6BB43 /* UniversalCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalCoding.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2DD7C0651590D3F400D6BB43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DD7C06D1590D3F400D6BB43 /* UIKit.framework in Frameworks */,
+				2DD7C06F1590D3F400D6BB43 /* Foundation.framework in Frameworks */,
+				2DD7C0711590D3F400D6BB43 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DD7C07F1590D3F400D6BB43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DD7C0851590D3F400D6BB43 /* SenTestingKit.framework in Frameworks */,
+				2DD7C0861590D3F400D6BB43 /* UIKit.framework in Frameworks */,
+				2DD7C0871590D3F400D6BB43 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2DD7C05D1590D3F400D6BB43 = {
+			isa = PBXGroup;
+			children = (
+				2DD7C0721590D3F400D6BB43 /* UniversalCoding */,
+				2DD7C08A1590D3F400D6BB43 /* UniversalCodingTests */,
+				2DD7C06B1590D3F400D6BB43 /* Frameworks */,
+				2DD7C0691590D3F400D6BB43 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2DD7C0691590D3F400D6BB43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2DD7C0681590D3F400D6BB43 /* UniversalCoding.app */,
+				2DD7C0831590D3F400D6BB43 /* UniversalCodingTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2DD7C06B1590D3F400D6BB43 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2DD7C06C1590D3F400D6BB43 /* UIKit.framework */,
+				2DD7C06E1590D3F400D6BB43 /* Foundation.framework */,
+				2DD7C0701590D3F400D6BB43 /* CoreGraphics.framework */,
+				2DD7C0841590D3F400D6BB43 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2DD7C0721590D3F400D6BB43 /* UniversalCoding */ = {
+			isa = PBXGroup;
+			children = (
+				2DD7C07B1590D3F400D6BB43 /* AppDelegate.h */,
+				2DD7C07C1590D3F400D6BB43 /* AppDelegate.m */,
+				2DD7C0731590D3F400D6BB43 /* Supporting Files */,
+				2DD7C09B1590D46600D6BB43 /* UniversalCoding.h */,
+				2DD7C09C1590D46600D6BB43 /* UniversalCoding.m */,
+			);
+			path = UniversalCoding;
+			sourceTree = "<group>";
+		};
+		2DD7C0731590D3F400D6BB43 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2DD7C0741590D3F400D6BB43 /* UniversalCoding-Info.plist */,
+				2DD7C0751590D3F400D6BB43 /* InfoPlist.strings */,
+				2DD7C0781590D3F400D6BB43 /* main.m */,
+				2DD7C07A1590D3F400D6BB43 /* UniversalCoding-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2DD7C08A1590D3F400D6BB43 /* UniversalCodingTests */ = {
+			isa = PBXGroup;
+			children = (
+				2DD7C0901590D3F400D6BB43 /* UniversalCodingTests.h */,
+				2DD7C0911590D3F400D6BB43 /* UniversalCodingTests.m */,
+				2DD7C08B1590D3F400D6BB43 /* Supporting Files */,
+			);
+			path = UniversalCodingTests;
+			sourceTree = "<group>";
+		};
+		2DD7C08B1590D3F400D6BB43 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2DD7C08C1590D3F400D6BB43 /* UniversalCodingTests-Info.plist */,
+				2DD7C08D1590D3F400D6BB43 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2DD7C0671590D3F400D6BB43 /* UniversalCoding */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DD7C0951590D3F400D6BB43 /* Build configuration list for PBXNativeTarget "UniversalCoding" */;
+			buildPhases = (
+				2DD7C0641590D3F400D6BB43 /* Sources */,
+				2DD7C0651590D3F400D6BB43 /* Frameworks */,
+				2DD7C0661590D3F400D6BB43 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UniversalCoding;
+			productName = UniversalCoding;
+			productReference = 2DD7C0681590D3F400D6BB43 /* UniversalCoding.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2DD7C0821590D3F400D6BB43 /* UniversalCodingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DD7C0981590D3F400D6BB43 /* Build configuration list for PBXNativeTarget "UniversalCodingTests" */;
+			buildPhases = (
+				2DD7C07E1590D3F400D6BB43 /* Sources */,
+				2DD7C07F1590D3F400D6BB43 /* Frameworks */,
+				2DD7C0801590D3F400D6BB43 /* Resources */,
+				2DD7C0811590D3F400D6BB43 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2DD7C0891590D3F400D6BB43 /* PBXTargetDependency */,
+			);
+			name = UniversalCodingTests;
+			productName = UniversalCodingTests;
+			productReference = 2DD7C0831590D3F400D6BB43 /* UniversalCodingTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2DD7C05F1590D3F400D6BB43 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 2DD7C0621590D3F400D6BB43 /* Build configuration list for PBXProject "UniversalCoding" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2DD7C05D1590D3F400D6BB43;
+			productRefGroup = 2DD7C0691590D3F400D6BB43 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2DD7C0671590D3F400D6BB43 /* UniversalCoding */,
+				2DD7C0821590D3F400D6BB43 /* UniversalCodingTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2DD7C0661590D3F400D6BB43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DD7C0771590D3F400D6BB43 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DD7C0801590D3F400D6BB43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DD7C08F1590D3F400D6BB43 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2DD7C0811590D3F400D6BB43 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2DD7C0641590D3F400D6BB43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DD7C0791590D3F400D6BB43 /* main.m in Sources */,
+				2DD7C07D1590D3F400D6BB43 /* AppDelegate.m in Sources */,
+				2DD7C09D1590D46600D6BB43 /* UniversalCoding.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DD7C07E1590D3F400D6BB43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DD7C0921590D3F400D6BB43 /* UniversalCodingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2DD7C0891590D3F400D6BB43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2DD7C0671590D3F400D6BB43 /* UniversalCoding */;
+			targetProxy = 2DD7C0881590D3F400D6BB43 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2DD7C0751590D3F400D6BB43 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DD7C0761590D3F400D6BB43 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2DD7C08D1590D3F400D6BB43 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DD7C08E1590D3F400D6BB43 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2DD7C0931590D3F400D6BB43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2DD7C0941590D3F400D6BB43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2DD7C0961590D3F400D6BB43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UniversalCoding/UniversalCoding-Prefix.pch";
+				INFOPLIST_FILE = "UniversalCoding/UniversalCoding-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2DD7C0971590D3F400D6BB43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UniversalCoding/UniversalCoding-Prefix.pch";
+				INFOPLIST_FILE = "UniversalCoding/UniversalCoding-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2DD7C0991590D3F400D6BB43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UniversalCoding.app/UniversalCoding";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UniversalCoding/UniversalCoding-Prefix.pch";
+				INFOPLIST_FILE = "UniversalCodingTests/UniversalCodingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2DD7C09A1590D3F400D6BB43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UniversalCoding.app/UniversalCoding";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UniversalCoding/UniversalCoding-Prefix.pch";
+				INFOPLIST_FILE = "UniversalCodingTests/UniversalCodingTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2DD7C0621590D3F400D6BB43 /* Build configuration list for PBXProject "UniversalCoding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DD7C0931590D3F400D6BB43 /* Debug */,
+				2DD7C0941590D3F400D6BB43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DD7C0951590D3F400D6BB43 /* Build configuration list for PBXNativeTarget "UniversalCoding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DD7C0961590D3F400D6BB43 /* Debug */,
+				2DD7C0971590D3F400D6BB43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2DD7C0981590D3F400D6BB43 /* Build configuration list for PBXNativeTarget "UniversalCodingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DD7C0991590D3F400D6BB43 /* Debug */,
+				2DD7C09A1590D3F400D6BB43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2DD7C05F1590D3F400D6BB43 /* Project object */;
+}
