@@ -13,5 +13,6 @@
 
 
 - (NSDictionary*)getPropertys:(id) object;
+- (NSDictionary*)getIvars:(id) object;
 
 @end

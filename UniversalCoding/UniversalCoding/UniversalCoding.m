@@ -28,18 +28,35 @@
         NSString* atribute = [[[NSString alloc] initWithUTF8String:property_getAttributes(properties[i])] autorelease];
         NSArray *array = [atribute componentsSeparatedByString:@","];
         NSString *type = [array objectAtIndex:0];
-//        NSLog(@"\n\n%@\n\n",atribute);
-//        NSLog(@"\n%@\n\n",type);
         type = [self parseType:type];
-//        NSLog(@"\n%@\n\n",type);
         [propertyDictionary setValue: type forKey:propertyName];
     }    
     return propertyDictionary;
 }
 
+- (NSDictionary*)getIvars:(id) object
+{
+    NSParameterAssert(object);
+    NSMutableDictionary *ivarDictionary = [NSMutableDictionary dictionary];
+    uint outCount = 0;
+    Ivar * ivars = class_copyIvarList([object class],&outCount); 
+    for (int i=0; i<outCount; i++) 
+    {
+        NSString *ivarName = [[[NSString alloc] initWithUTF8String:ivar_getName(ivars[i])] autorelease];
+        NSString *ivarType = [[[NSString alloc] initWithUTF8String:ivar_getTypeEncoding(ivars[i])] autorelease]; 
+        [ivarDictionary setValue:[self parseType:ivarType] forKey:ivarName];
+    }
+    return ivarDictionary;
+}
+
 - (NSString*)parseType:(NSString*) type
 {
-    switch ([type UTF8String][1]) 
+    char simbolToSwitch = [type UTF8String][1];
+    if (simbolToSwitch=='\0') 
+    {
+        simbolToSwitch=[type UTF8String][0];
+    }
+    switch (simbolToSwitch) 
     {
         case '@':
             {
@@ -77,11 +94,11 @@
                         return @"short*";
                     case 'I':
                         return @"unsigned*";
-
                 }
             }
             break;
     }
+    return nil;
 }
 
 @end
