@@ -39,13 +39,14 @@
     NSParameterAssert(object);
     NSMutableDictionary *ivarDictionary = [NSMutableDictionary dictionary];
     uint outCount = 0;
-    Ivar * ivars = class_copyIvarList([object class],&outCount); 
+    Ivar * ivars = class_copyIvarList([object class],&outCount);
     for (int i=0; i<outCount; i++) 
     {
         NSString *ivarName = [[[NSString alloc] initWithUTF8String:ivar_getName(ivars[i])] autorelease];
         NSString *ivarType = [[[NSString alloc] initWithUTF8String:ivar_getTypeEncoding(ivars[i])] autorelease]; 
         [ivarDictionary setValue:[self parseType:ivarType] forKey:ivarName];
     }
+    //---
     return ivarDictionary;
 }
 
