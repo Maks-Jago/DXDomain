@@ -29,8 +29,18 @@
     
     UniversalCoding *cod = [UniversalCoding new];
     
-    NSArray* propertyArray = [cod getPropertys:[TestClass new]];
-                
+    NSDictionary *propertyDict = [cod getPropertys:[TestClass new]];
+    [propertyDict retain];
+    NSArray *keys = [propertyDict allKeys];
+    NSArray *values = [propertyDict allValues];
+    
+    for (int i=0; i<[propertyDict count]; i++) 
+    {
+        NSLog(@"\n\n key = %@, value = %@ \n\n",[keys objectAtIndex:i],[values objectAtIndex:i]);
+    }
+
+    [propertyDict release];
+    [cod release];
     return YES;
 }
 
