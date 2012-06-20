@@ -50,11 +50,13 @@
         case 'i':
             return @"int";
         case 'f':
-            return @"gloat";
+            return @"float";
         case 'l':
             return @"long";
-        case 's':
+        case 's':                        
             return @"short";
+        case 'c':
+            return @"char";
         case 'I':
             return @"unsigned";
         case '^':
@@ -65,6 +67,16 @@
                         return @"int*";
                     case 'v':
                         return @"void*";
+                    case 'c':
+                        return @"char*";
+                    case 'f':
+                        return @"float*";
+                    case 'l':
+                        return @"long*";
+                    case 's':                        
+                        return @"short*";
+                    case 'I':
+                        return @"unsigned*";
 
                 }
             }
