@@ -52,9 +52,9 @@
 - (NSString*)parseType:(NSString*) type
 {
     char simbolToSwitch = [type UTF8String][1];
-    if (simbolToSwitch=='\0') 
+    if (simbolToSwitch == '\0' || simbolToSwitch == '\"') 
     {
-        simbolToSwitch=[type UTF8String][0];
+        simbolToSwitch = [type UTF8String][0];
     }
     switch (simbolToSwitch) 
     {

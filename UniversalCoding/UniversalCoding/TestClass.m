@@ -10,6 +10,7 @@
 
 @implementation TestClass
 
-@synthesize string,num;
+@synthesize string=_string;
+@synthesize num=_num;
 
 @end
