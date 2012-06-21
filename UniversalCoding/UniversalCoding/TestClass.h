@@ -11,6 +11,7 @@
 @interface TestClass : NSObject
 {
     NSInteger integer;
+    double db;
     NSArray *someArray;
     char someSymbol;
 }
