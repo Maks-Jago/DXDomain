@@ -120,16 +120,21 @@
         {
             [encoder encodeInteger:(NSInteger)[self valueForKey:[keys objectAtIndex:i]] forKey:[keys objectAtIndex:i]];
         }
-        else if ([[values objectAtIndex:i]isEqualToString:@"double"]) {
-           // [encoder encodeDouble:(double)[self valueForKey:[keys objectAtIndex:i]] forKey:[keys objectAtIndex:i]];
-
-      //      [[NSNumber alloc] [self valueForKey:[keys objectAtIndex:i]]];
+        else if ([[values objectAtIndex:i]isEqualToString:@"double"]) 
+        {
+            [encoder encodeDouble:[(NSNumber*)[self valueForKey:[keys objectAtIndex:i]] doubleValue] forKey:[keys objectAtIndex:i]];
         }
-        else if ([[values objectAtIndex:i]isEqualToString:@"float"]) {
-            
+        else if ([[values objectAtIndex:i]isEqualToString:@"float"]) 
+        {
+            [encoder encodeFloat:[(NSNumber*)[self valueForKey:[keys objectAtIndex:i]] floatValue] forKey:[keys objectAtIndex:i]];
         }
-        else if ([[values objectAtIndex:i]isEqualToString:@"bool"]) {
-           
+        else if ([[values objectAtIndex:i]isEqualToString:@"bool"]) 
+        {
+           if([self valueForKey:[keys objectAtIndex:i]] == YES)
+           {
+               BOOL b = YES;
+               [encoder encodeBool:b forKey:[keys objectAtIndex:i]];
+           }
         }
         else // This is object
         {
