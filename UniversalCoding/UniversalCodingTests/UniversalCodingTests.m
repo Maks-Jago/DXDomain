@@ -8,6 +8,7 @@
 
 #import "UniversalCodingTests.h"
 #import "UniversalCoding.h"
+#import "TestClass.h"
 
 @implementation UniversalCodingTests
 {
@@ -33,7 +34,12 @@
     
     STAssertThrows([cod getIvars:nil],@"should throw exceprion!!!");
     STAssertNoThrow([cod getIvars:[NSString new]],@"should not throw exception!!!");
+    
+    STAssertNil([[cod getPropertys:[NSString new]] count],@"should be equal nill!!!");
+    STAssertNotNil([cod getPropertys:[TestClass new]],@"should'nt be equal nill!!!");
+    
+    STAssertNil([[cod getIvars:[NSString new]] count],@"should be equal nill!!!");
+    STAssertNotNil([cod getIvars:[TestClass new]],@"should'nt be equal nill!!!");
 }
-
 
 @end
