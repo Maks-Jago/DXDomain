@@ -12,6 +12,7 @@
 @implementation UniversalCodingTests
 {
     UniversalCoding *cod;
+    id uc;
 }
 
 - (void)setUp
@@ -22,6 +23,8 @@
 
 - (void)tearDown
 {
+   // [uc verify];
+    
     [cod release];
     [super tearDown];
 }
@@ -30,6 +33,13 @@
 {
     STAssertThrows([cod getPropertys:nil],@"should throw exceprion!!!");
     STAssertNoThrow([cod getPropertys:[NSString new]],@"should not throw exception!!!");
+}
+
+-(void)testNSCoding
+{
+    uc = [OCMockObject mockForClass:[UniversalCoding class]];
+  //  [[uc expect] encodeWithCoder:[[NSCoder alloc]init]];
+    
 }
 
 @end
