@@ -26,10 +26,14 @@
     [super tearDown];
 }
 
-- (void)testGetProperty
+- (void)testGetPropertyAndIvar
 {
     STAssertThrows([cod getPropertys:nil],@"should throw exceprion!!!");
     STAssertNoThrow([cod getPropertys:[NSString new]],@"should not throw exception!!!");
+    
+    STAssertThrows([cod getIvars:nil],@"should throw exceprion!!!");
+    STAssertNoThrow([cod getIvars:[NSString new]],@"should not throw exception!!!");
 }
+
 
 @end
