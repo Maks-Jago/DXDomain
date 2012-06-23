@@ -12,77 +12,60 @@
 
 @implementation UniversalCodingTests
 {
-    UniversalCoding *cod;
     id coderMock;
+    TestClass* tc;
 }
 
 - (void)setUp
 {
     [super setUp];
-    cod = [UniversalCoding new];
 }
 
 - (void)tearDown
-{    
-    [cod release];
+{
     [super tearDown];
 }
 
-- (void)testGetPropertyAndIvar
-{
-    STAssertThrows([cod getPropertys:nil],@"should throw exceprion!!!");
-    STAssertNoThrow([cod getPropertys:[NSString new]],@"should not throw exception!!!");
-    
-    STAssertThrows([cod getIvars:nil],@"should throw exceprion!!!");
-    STAssertNoThrow([cod getIvars:[NSString new]],@"should not throw exception!!!");
-        
-    NSDictionary *dict = [NSDictionary dictionary];
-    NSInteger countBefore = [dict count];
-    TestClass *testObject = [TestClass new];
-    
-    dict = [cod getPropertys:[TestClass new]];//[cod getPropertys:testObject];
-    NSInteger countAfter = [dict count];
-    
-    NSArray *allKeys = [dict allKeys];
-    NSArray *allValues = [dict allValues];
-    
-    for(int i=0;i<[allKeys count];i++)
-    {
-//        STAssertEqualObjects([allKeys objectAtIndex:i], [testObject ]<#a1, a2...#>)
-    }
-    
-    STAssertFalse(countBefore == countAfter,@"should be different!!!");    
-    dict = [cod getIvars:[TestClass new]];
-    countAfter = [dict count];
-  
-    STAssertFalse(countBefore == countAfter,@"should be different!!!");
-    dict = [cod getIvars:[NSString new]];
-    countAfter = [dict count];
-    
-    STAssertTrue(countBefore == countAfter,@"should be equal!!!");
-    
-    dict = [cod getPropertys:[NSString new]];
-    countAfter = [dict count];
-    
-    STAssertTrue(countAfter == countBefore,@"should be equal!!!");
-        
-}
 
 -(void)testInitWithCoder
 {
     coderMock = [OCMockObject mockForClass:[NSCoder class]];
-    [[[coderMock stub]andReturn:[[NSNumber alloc]initWithInt:10]] decodeIntegerForKey:@""];
-    [[[coderMock stub]andReturn:[[NSNumber alloc]initWithDouble:10.1]] decodeDoubleForKey:@""];
-    [[[coderMock stub]andReturn:[[NSNumber alloc]initWithFloat:10.2]] decodeFloatForKey:@""];
-    [[[coderMock stub]andReturn:[[NSNumber alloc]initWithBool:YES]] decodeBoolForKey:@""];
-    [[[coderMock stub]andReturn:[[NSString alloc]initWithFormat:@"qwerty"]] decodeObjectForKey:@""];
+    [[[coderMock stub] andReturn:[NSNumber numberWithInt:10]] decodeObjectForKey:@"integer"];
+    [[[coderMock stub] andReturn:[NSNumber numberWithInt:11]] decodeObjectForKey:@"a"];
+    [[[coderMock stub] andReturn:[NSNumber numberWithDouble:10.1]] decodeObjectForKey:@"b"];
+    [[[coderMock stub] andReturn:[NSNumber numberWithFloat:10.2]] decodeObjectForKey:@"c"];
+    [[[coderMock stub] andReturn:[NSNumber numberWithBool:YES]] decodeObjectForKey:@"d"];
+    [[[coderMock stub] andReturn:[NSString stringWithFormat:@"qwerty"]] decodeObjectForKey:@"str"];
+    tc = [[TestClass alloc ] initWithCoder:coderMock];
     
-    [cod initWithCoder:coderMock];
-    NSLog(@"%a",cod);
-    
+    STAssertTrue(tc.integer == 10,@"Integer doesn't work!");
+    STAssertTrue(tc.a == 11,@"Int doesn't work!");
+    STAssertEqualsWithAccuracy(tc.b, 10.1, 0.1, @"Double doesn't work");
+    STAssertEqualsWithAccuracy(tc.c, 10.2f, 0.001, @"Float doesn't work");
+    STAssertTrue(tc.d == YES,@"Bool doesn't work");
+    STAssertTrue([tc.str isEqualToString:@"qwerty"],@"NSString doesn't work");
 }
 
-/*error: testInitWithCoder (UniversalCodingTests) failed: +[OCMConstraint any]: unrecognized selector sent to class 0x67a0788
-*/
+-(void)testEncodeWithCoder
+{
+    tc = [TestClass new];
+    tc.integer = 15;
+    tc.a = 16;
+    tc.b = 16.1;
+    tc.c = 16.2;
+    tc.d = NO;
+    tc.str = @"somethng";   
+    
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:tc];
+    TestClass *result = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
+    STAssertTrue(tc.integer == result.integer,@"Integer diff");
+    STAssertTrue(tc.a == result.a,@"Int diff");
+    STAssertEqualsWithAccuracy(tc.b, result.b, 0.1, @"Double diff");
+    STAssertEqualsWithAccuracy(tc.c, result.c, 0.1, @"Float diff");
+    STAssertTrue(tc.d == result.d,@"BOOL diff");
+    STAssertTrue([tc.str isEqualToString:result.str],@"Strings diff");
+    
+}
 
 @end

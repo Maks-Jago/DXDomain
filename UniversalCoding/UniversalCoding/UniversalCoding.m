@@ -113,30 +113,10 @@
 {
     NSDictionary* ivars = [self getIvars:self];
     NSArray* keys = [ivars allKeys];
-    NSArray* values = [ivars allValues];
     for(int i=0;i<[keys count];i++)
     {
         //value - тип, key - имя
-        if([[values objectAtIndex:i]isEqualToString:@"int"])
-        {
-            [encoder encodeInteger:(NSInteger)[self valueForKey:[keys objectAtIndex:i]] forKey:[keys objectAtIndex:i]];
-        }
-        else if ([[values objectAtIndex:i]isEqualToString:@"double"]) 
-        {
-            [encoder encodeDouble:[(NSNumber*)[self valueForKey:[keys objectAtIndex:i]] doubleValue] forKey:[keys objectAtIndex:i]];
-        }
-        else if ([[values objectAtIndex:i]isEqualToString:@"float"]) 
-        {
-            [encoder encodeFloat:[(NSNumber*)[self valueForKey:[keys objectAtIndex:i]] floatValue] forKey:[keys objectAtIndex:i]];
-        }
-        else if ([[values objectAtIndex:i]isEqualToString:@"bool"]) 
-        {
-           [encoder encodeBool:[[self valueForKey:[keys objectAtIndex:i]] boolValue] forKey:[keys objectAtIndex:i]];
-        }
-        else // This is object
-        {
-            [encoder encodeObject:[self valueForKey:[keys objectAtIndex:i]] forKey:[keys objectAtIndex:i]];
-        }
+        [encoder encodeObject:[self valueForKey:[keys objectAtIndex:i]] forKey:[keys objectAtIndex:i]];
     }
 }
 
@@ -146,33 +126,11 @@
     {
         NSDictionary* ivars = [self getIvars:self];
         NSArray* keys = [ivars allKeys];
-        NSArray* values = [ivars allValues];
         for(int i=0;i<[keys count];i++)
         {
             //value - тип, key - имя
-            if([[values objectAtIndex:i]isEqualToString:@"int"])
-            {
-                [self setValue:[[NSNumber alloc] initWithInt:[decoder decodeIntegerForKey:[keys objectAtIndex:i]]] forKey:[keys objectAtIndex:i]];
-            }
-            else if ([[values objectAtIndex:i]isEqualToString:@"double"]) 
-            {
-                    [self setValue:[[NSNumber alloc] initWithDouble:[decoder decodeDoubleForKey:[keys objectAtIndex:i]]] forKey:[keys objectAtIndex:i]];
-            }
-            else if ([[values objectAtIndex:i]isEqualToString:@"float"]) 
-            {
-                [self setValue:[[NSNumber alloc] initWithFloat:[decoder decodeFloatForKey: [keys objectAtIndex:i]]] forKey:[keys objectAtIndex:i]];
-            }
-            else if ([[values objectAtIndex:i]isEqualToString:@"bool"]) 
-            {
-                [self setValue:[[NSNumber alloc] initWithBool:[decoder decodeBoolForKey:[keys objectAtIndex:i]]] forKey:[keys objectAtIndex:i]];
-            }
-            else //this is OBJECT
-            {
-                [self setValue:[decoder decodeObjectForKey:[keys objectAtIndex:i]] forKey:[keys objectAtIndex:i]];
-            }
-    
+            [self setValue:[decoder decodeObjectForKey:[keys objectAtIndex:i]] forKey:[keys objectAtIndex:i]];
         }
-        
     }
     return self;
 }

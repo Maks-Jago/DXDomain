@@ -7,16 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UniversalCoding.h"
 
-@interface TestClass : NSObject
-{
-    NSInteger integer;
-    double db;
-    NSArray *someArray;
-    char someSymbol;
-}
-@property (nonatomic,strong) NSString* string;
-@property (nonatomic,assign) NSInteger num;
-@property (nonatomic,assign) double _doubleName;
+@interface TestClass :UniversalCoding
+
+@property (nonatomic,strong) NSString* str;
+@property (nonatomic,assign) NSInteger integer;
+@property (nonatomic,assign) int a;
+@property (nonatomic,assign) double b;
+@property (nonatomic,assign) float c;
+@property (nonatomic,assign) BOOL d;
 
 @end
