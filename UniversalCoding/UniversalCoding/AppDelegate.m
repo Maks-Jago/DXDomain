@@ -27,7 +27,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    UniversalCoding *cod = [UniversalCoding new];
+ /*   UniversalCoding *cod = [UniversalCoding new];
     
     NSDictionary *propertyDict = [cod getPropertys:[TestClass new]];
     NSArray *keys = [propertyDict allKeys];
@@ -53,7 +53,7 @@
         NSLog(@"\n\n key = %@, value = %@ \n\n",[keys objectAtIndex:i],[values objectAtIndex:i]);
     }
 
-    [cod release];
+    [cod release];*/
     return YES;
 }
 

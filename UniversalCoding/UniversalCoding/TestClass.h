@@ -17,5 +17,6 @@
 }
 @property (nonatomic,strong) NSString* string;
 @property (nonatomic,assign) NSInteger num;
+@property (nonatomic,assign) double _doubleName;
 
 @end

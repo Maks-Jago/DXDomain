@@ -23,9 +23,7 @@
 }
 
 - (void)tearDown
-{
-   // [uc verify];
-    
+{    
     [cod release];
     [super tearDown];
 }
@@ -40,8 +38,18 @@
         
     NSDictionary *dict = [NSDictionary dictionary];
     NSInteger countBefore = [dict count];
-    dict = [cod getPropertys:[TestClass new]];
+    TestClass *testObject = [TestClass new];
+    
+    dict = [cod getPropertys:[TestClass new]];//[cod getPropertys:testObject];
     NSInteger countAfter = [dict count];
+    
+    NSArray *allKeys = [dict allKeys];
+    NSArray *allValues = [dict allValues];
+    
+    for(int i=0;i<[allKeys count];i++)
+    {
+//        STAssertEqualObjects([allKeys objectAtIndex:i], [testObject ]<#a1, a2...#>)
+    }
     
     STAssertFalse(countBefore == countAfter,@"should be different!!!");    
     dict = [cod getIvars:[TestClass new]];

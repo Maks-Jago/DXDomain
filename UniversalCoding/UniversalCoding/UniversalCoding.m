@@ -45,6 +45,7 @@
         NSString *ivarName = [[[NSString alloc] initWithUTF8String:ivar_getName(ivars[i])] autorelease];
         NSString *ivarType = [[[NSString alloc] initWithUTF8String:ivar_getTypeEncoding(ivars[i])] autorelease]; 
         [ivarDictionary setValue:[self parseType:ivarType] forKey:ivarName];
+        NSLog(@"\n\nname = %@  type = %@\n\n",ivarName,[self parseType:ivarType]);
     }
     return ivarDictionary;
 }
@@ -70,6 +71,8 @@
             return @"float";
         case 'l':
             return @"long";
+        case 'd':
+            return @"double";
         case 's':                        
             return @"short";
         case 'c':
@@ -92,6 +95,8 @@
                         return @"long*";
                     case 's':                        
                         return @"short*";
+                    case 'd':
+                        return @"double*";
                     case 'I':
                         return @"unsigned*";
                 }

@@ -16,6 +16,7 @@
     double b;
     float c;
     BOOL d;
+    NSInteger someIntnum;
 }
 
 - (NSDictionary*)getPropertys:(id) object;
