@@ -159,21 +159,13 @@
             }
             else if ([[values objectAtIndex:i]isEqualToString:@"bool"]) 
             {
-                BOOL rez = [decoder decodeBoolForKey:[keys objectAtIndex:i]];
-                if(rez == YES)
-                {
-                    [self setValue:[[NSNumber alloc] initWithBool:YES] forKey:[keys objectAtIndex:i]];
-                }
-                else 
-                {
-                    [self setValue:[[NSNumber alloc] initWithBool:NO] forKey:[keys objectAtIndex:i]];
-                }
-                
+                [self setValue:[[NSNumber alloc] initWithBool:[decoder decodeBoolForKey:[keys objectAtIndex:i]]] forKey:[keys objectAtIndex:i]];
             }
             else //this is OBJECT
             {
                 [self setValue:[decoder decodeObjectForKey:[keys objectAtIndex:i]] forKey:[keys objectAtIndex:i]];
             }
+    
         }
         
     }

@@ -12,7 +12,7 @@
 @implementation UniversalCodingTests
 {
     UniversalCoding *cod;
-    id uc;
+    id coderMock;
 }
 
 - (void)setUp
@@ -35,11 +35,21 @@
     STAssertNoThrow([cod getPropertys:[NSString new]],@"should not throw exception!!!");
 }
 
--(void)testNSCoding
+-(void)testInitWithCoder
 {
-    uc = [OCMockObject mockForClass:[UniversalCoding class]];
-  //  [[uc expect] encodeWithCoder:[[NSCoder alloc]init]];
+    coderMock = [OCMockObject mockForClass:[NSCoder class]];
+    [[[coderMock stub]andReturn:[[NSNumber alloc]initWithInt:10]] decodeIntegerForKey:@""];
+    [[[coderMock stub]andReturn:[[NSNumber alloc]initWithDouble:10.1]] decodeDoubleForKey:@""];
+    [[[coderMock stub]andReturn:[[NSNumber alloc]initWithFloat:10.2]] decodeFloatForKey:@""];
+    [[[coderMock stub]andReturn:[[NSNumber alloc]initWithBool:YES]] decodeBoolForKey:@""];
+    [[[coderMock stub]andReturn:[[NSString alloc]initWithFormat:@"qwerty"]] decodeObjectForKey:@""];
+    
+    [cod initWithCoder:coderMock];
+    NSLog(@"%a",cod);
     
 }
+
+/*error: testInitWithCoder (UniversalCodingTests) failed: +[OCMConstraint any]: unrecognized selector sent to class 0x67a0788
+*/
 
 @end
