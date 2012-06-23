@@ -10,6 +10,6 @@
 
 @implementation TestClass
 
-@synthesize integer,str,a,b,c;//,d;
+@synthesize integer,str,a,b,c,d;
 
 @end

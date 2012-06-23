@@ -10,21 +10,12 @@
 #import "UniversalCoding.h"
 
 @interface TestClass :UniversalCoding
-{
-//    NSInteger integer;
-//    int a;
-//    double b;
-//    float c;
-//    BOOL d;
-//    NSString* str;
-}
 
 @property (nonatomic,strong) NSString* str;
 @property (nonatomic,assign) NSInteger integer;
 @property (nonatomic,assign) int a;
 @property (nonatomic,assign) double b;
 @property (nonatomic,assign) float c;
-//@property (nonatomic,assign) BOOL d;
-
+@property (nonatomic,assign) BOOL d;
 
 @end
