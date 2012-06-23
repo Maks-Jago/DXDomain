@@ -12,6 +12,7 @@
 
 @synthesize string=_string;
 @synthesize num=_num;
+@synthesize _doubleName;
 
 //-(TestClass*)init
 //{
