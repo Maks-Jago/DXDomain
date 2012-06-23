@@ -106,10 +106,6 @@
 
 - (void) encodeWithCoder:(NSCoder*)encoder 
 {
-    //  [encoder encodeObject:someArray forKey:@"someArray"];
-    //  [encoder encodeInteger:someInteger forKey:@"someInteger"];
-    //  [encoder encodeBool:someBool forKey:@"someBool"];
-    
     NSDictionary* ivars = [self getIvars:self];
     NSArray* keys = [ivars allKeys];
     NSArray* values = [ivars allValues];
@@ -130,11 +126,7 @@
         }
         else if ([[values objectAtIndex:i]isEqualToString:@"bool"]) 
         {
-           if([self valueForKey:[keys objectAtIndex:i]] == YES)
-           {
-               BOOL b = YES;
-               [encoder encodeBool:b forKey:[keys objectAtIndex:i]];
-           }
+           [encoder encodeBool:[[self valueForKey:[keys objectAtIndex:i]] boolValue] forKey:[keys objectAtIndex:i]];
         }
         else // This is object
         {
@@ -167,21 +159,13 @@
             }
             else if ([[values objectAtIndex:i]isEqualToString:@"bool"]) 
             {
-                BOOL rez = [decoder decodeBoolForKey:[keys objectAtIndex:i]];
-                if(rez == YES)
-                {
-                    [self setValue:[[NSNumber alloc] initWithInt:1] forKey:[keys objectAtIndex:i]];
-                }
-                else 
-                {
-                    [self setValue:[[NSNumber alloc] initWithInt:0] forKey:[keys objectAtIndex:i]];
-                }
-                
+                [self setValue:[[NSNumber alloc] initWithBool:[decoder decodeBoolForKey:[keys objectAtIndex:i]]] forKey:[keys objectAtIndex:i]];
             }
             else //this is OBJECT
             {
                 [self setValue:[decoder decodeObjectForKey:[keys objectAtIndex:i]] forKey:[keys objectAtIndex:i]];
             }
+    
         }
         
     }

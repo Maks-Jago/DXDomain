@@ -10,9 +10,18 @@
 #import <objc/objc-runtime.h>
 
 @interface UniversalCoding : NSObject
-
+{
+    NSString* str;
+    int a;
+    double b;
+    float c;
+    BOOL d;
+}
 
 - (NSDictionary*)getPropertys:(id) object;
 - (NSDictionary*)getIvars:(id) object;
+
+- (void)encodeWithCoder:(NSCoder*)encoder; 
+- (id) initWithCoder:(NSCoder*)decoder;
 
 @end
