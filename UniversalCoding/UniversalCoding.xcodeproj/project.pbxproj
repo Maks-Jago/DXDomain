@@ -20,6 +20,8 @@
 		2DD7C0921590D3F400D6BB43 /* UniversalCodingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7C0911590D3F400D6BB43 /* UniversalCodingTests.m */; };
 		2DD7C09D1590D46600D6BB43 /* UniversalCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7C09C1590D46600D6BB43 /* UniversalCoding.m */; };
 		2DD7C0A01590DBAC00D6BB43 /* TestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7C09F1590DBAC00D6BB43 /* TestClass.m */; };
+		30BEB6F1159501CB00E794DC /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BEB6F0159501CB00E794DC /* libOCMock.a */; };
+		30BEB6F21595022000E794DC /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BEB6F0159501CB00E794DC /* libOCMock.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,13 @@
 		2DD7C09C1590D46600D6BB43 /* UniversalCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UniversalCoding.m; sourceTree = "<group>"; };
 		2DD7C09E1590DBAC00D6BB43 /* TestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestClass.h; sourceTree = "<group>"; };
 		2DD7C09F1590DBAC00D6BB43 /* TestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestClass.m; sourceTree = "<group>"; };
+		30BEB6E9159501CB00E794DC /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		30BEB6EA159501CB00E794DC /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		30BEB6EB159501CB00E794DC /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		30BEB6EC159501CB00E794DC /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		30BEB6ED159501CB00E794DC /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		30BEB6EE159501CB00E794DC /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
+		30BEB6F0159501CB00E794DC /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +72,7 @@
 				2DD7C06D1590D3F400D6BB43 /* UIKit.framework in Frameworks */,
 				2DD7C06F1590D3F400D6BB43 /* Foundation.framework in Frameworks */,
 				2DD7C0711590D3F400D6BB43 /* CoreGraphics.framework in Frameworks */,
+				30BEB6F1159501CB00E794DC /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30BEB6F21595022000E794DC /* libOCMock.a in Frameworks */,
 				2DD7C0851590D3F400D6BB43 /* SenTestingKit.framework in Frameworks */,
 				2DD7C0861590D3F400D6BB43 /* UIKit.framework in Frameworks */,
 				2DD7C0871590D3F400D6BB43 /* Foundation.framework in Frameworks */,
@@ -82,6 +93,7 @@
 		2DD7C05D1590D3F400D6BB43 = {
 			isa = PBXGroup;
 			children = (
+				30BEB6E6159501CB00E794DC /* usr */,
 				2DD7C0721590D3F400D6BB43 /* UniversalCoding */,
 				2DD7C08A1590D3F400D6BB43 /* UniversalCodingTests */,
 				2DD7C06B1590D3F400D6BB43 /* Frameworks */,
@@ -151,6 +163,44 @@
 				2DD7C08D1590D3F400D6BB43 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		30BEB6E6159501CB00E794DC /* usr */ = {
+			isa = PBXGroup;
+			children = (
+				30BEB6E7159501CB00E794DC /* include */,
+				30BEB6EF159501CB00E794DC /* lib */,
+			);
+			path = usr;
+			sourceTree = "<group>";
+		};
+		30BEB6E7159501CB00E794DC /* include */ = {
+			isa = PBXGroup;
+			children = (
+				30BEB6E8159501CB00E794DC /* OCMock */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		30BEB6E8159501CB00E794DC /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				30BEB6E9159501CB00E794DC /* NSNotificationCenter+OCMAdditions.h */,
+				30BEB6EA159501CB00E794DC /* OCMArg.h */,
+				30BEB6EB159501CB00E794DC /* OCMConstraint.h */,
+				30BEB6EC159501CB00E794DC /* OCMock.h */,
+				30BEB6ED159501CB00E794DC /* OCMockObject.h */,
+				30BEB6EE159501CB00E794DC /* OCMockRecorder.h */,
+			);
+			path = OCMock;
+			sourceTree = "<group>";
+		};
+		30BEB6EF159501CB00E794DC /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				30BEB6F0159501CB00E794DC /* libOCMock.a */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,9 +401,19 @@
 		2DD7C0961590D3F400D6BB43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Soft\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UniversalCoding/UniversalCoding-Prefix.pch";
 				INFOPLIST_FILE = "UniversalCoding/UniversalCoding-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Soft/OCMock.framework/Versions/A\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/usr/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -362,9 +422,19 @@
 		2DD7C0971590D3F400D6BB43 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Soft\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UniversalCoding/UniversalCoding-Prefix.pch";
 				INFOPLIST_FILE = "UniversalCoding/UniversalCoding-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Soft/OCMock.framework/Versions/A\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/usr/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -380,7 +450,21 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UniversalCoding/UniversalCoding-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"S(SRCROOT)/usr/include/**",
+					OCMock,
+				);
 				INFOPLIST_FILE = "UniversalCodingTests/UniversalCodingTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/usr/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"\"$(SRCROOT)/usr/lib/libOCMock.a\"",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -397,7 +481,21 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UniversalCoding/UniversalCoding-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"S(SRCROOT)/usr/include/**",
+					OCMock,
+				);
 				INFOPLIST_FILE = "UniversalCodingTests/UniversalCodingTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/usr/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"\"$(SRCROOT)/usr/lib/libOCMock.a\"",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -423,6 +521,7 @@
 				2DD7C0971590D3F400D6BB43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2DD7C0981590D3F400D6BB43 /* Build configuration list for PBXNativeTarget "UniversalCodingTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +530,7 @@
 				2DD7C09A1590D3F400D6BB43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
