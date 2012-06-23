@@ -44,27 +44,19 @@
     STAssertThrows([cod getIvars:nil],@"should throw exceprion!!!");
     STAssertNoThrow([cod getIvars:[NSString new]],@"should not throw exception!!!");
     
-    NSDictionary *dict = [NSDictionary dictionary];
-    NSInteger countBeforeInitDict = [dict count];
-    
-    dict = [cod getIvars:[TestClass new]];
-    NSInteger countAfterInitDict = [dict count];
-    STAssertFalse(countBeforeInitDict == countAfterInitDict,@"should be equal!!!");
-    
-    dict = [cod getIvars:[NSString new]];
-    countAfterInitDict = [dict count];    
-    STAssertTrue(countBeforeInitDict == countAfterInitDict,@"should be equal different!!!");    
+    STAssertTrue([[cod getIvars:[TestClass new]] count] > 0, @"should be equal 0!!!");
+       
+    STAssertTrue([[cod getIvars:[NSString new]] count] == 0, @"should be > 0!!!");    
     
     TestClass *testClass = [[TestClass new] autorelease];
-    dict = [cod getIvars:testClass];
-    NSArray *keys = [dict allKeys];
-    id ii;    
+    NSDictionary *dict = [cod getIvars:testClass];
+    NSArray *keys = [dict allKeys]; 
     
-    STAssertNoThrow(ii = [testClass valueForKey:[keys objectAtIndex:0]],@"object testClass dont have ivar - %@",[keys objectAtIndex:0]);        
-    STAssertNoThrow(ii = [testClass valueForKey:[keys objectAtIndex:1]],@"object testClass dont have ivar - %@",[keys objectAtIndex:1]);        
-    STAssertNoThrow(ii = [testClass valueForKey:[keys objectAtIndex:2]],@"object testClass dont have ivar - %@",[keys objectAtIndex:2]);
-    STAssertNoThrow(ii = [testClass valueForKey:[keys objectAtIndex:3]],@"object testClass dont have ivar - %@",[keys objectAtIndex:3]);
-    STAssertNoThrow(ii = [testClass valueForKey:[keys objectAtIndex:4]],@"object testClass dont have ivar - %@",[keys objectAtIndex:4]);        
+    STAssertNoThrow([testClass valueForKey:[keys objectAtIndex:0]], @"object testClass dont have ivar - %@", [keys objectAtIndex:0]);        
+    STAssertNoThrow([testClass valueForKey:[keys objectAtIndex:1]], @"object testClass dont have ivar - %@", [keys objectAtIndex:1]);        
+    STAssertNoThrow([testClass valueForKey:[keys objectAtIndex:2]], @"object testClass dont have ivar - %@", [keys objectAtIndex:2]);
+    STAssertNoThrow([testClass valueForKey:[keys objectAtIndex:3]], @"object testClass dont have ivar - %@", [keys objectAtIndex:3]);
+    STAssertNoThrow([testClass valueForKey:[keys objectAtIndex:4]], @"object testClass dont have ivar - %@", [keys objectAtIndex:4]);        
 }
 
 - (void) testGetProperty
@@ -72,25 +64,17 @@
     STAssertThrows([cod getPropertys:nil],@"should throw exceprion!!!");
     STAssertNoThrow([cod getPropertys:[NSString new]],@"should not throw exception!!!");
     
-    NSDictionary *dict = [NSDictionary dictionary];
-    NSInteger countBeforeInitDict = [dict count];
+    STAssertTrue([[cod getPropertys:[TestClass new]] count] > 0, @"should be equal 0!!!");    
     
-    dict = [cod getPropertys:[TestClass new]];
-    NSInteger countAfterInitDict = [dict count];    
-    STAssertFalse(countBeforeInitDict == countAfterInitDict,@"should be equal!!!");    
-    
-    dict = [cod getPropertys:[NSString new]];
-    countAfterInitDict = [dict count];    
-    STAssertTrue(countAfterInitDict == countBeforeInitDict,@"should be equal different!!!");
+    STAssertTrue([[cod getPropertys:[NSString new]] count] == 0, @"should be > 0!!!");
     
     TestClass *testClass = [[TestClass new] autorelease];
-    dict = [cod getPropertys:testClass];
+    NSDictionary *dict = [cod getPropertys:testClass];
     NSArray *keys = [dict allKeys];        
     
-    id ii;
-    STAssertNoThrow(ii = [testClass valueForKey:[keys objectAtIndex:0]],@"object testClass dont have property - %@",[keys objectAtIndex:0]);
-    STAssertNoThrow(ii = [testClass valueForKey:[keys objectAtIndex:1]],@"object testClass dont have property - %@",[keys objectAtIndex:1]);
-    STAssertNoThrow(ii = [testClass valueForKey:[keys objectAtIndex:2]],@"object testClass dont have property - %@",[keys objectAtIndex:2]);
+    STAssertNoThrow([testClass valueForKey:[keys objectAtIndex:0]], @"object testClass dont have property - %@", [keys objectAtIndex:0]);
+    STAssertNoThrow([testClass valueForKey:[keys objectAtIndex:1]], @"object testClass dont have property - %@", [keys objectAtIndex:1]);
+    STAssertNoThrow([testClass valueForKey:[keys objectAtIndex:2]], @"object testClass dont have property - %@", [keys objectAtIndex:2]);
 }
 
 
