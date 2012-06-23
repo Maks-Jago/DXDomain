@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <objc/objc-runtime.h>
 
-@interface UniversalCoding : NSObject
+@interface UniversalCoding : NSObject <NSCoding>
 
 - (NSDictionary*)getPropertys:(id) object;
 - (NSDictionary*)getIvars:(id) object;
