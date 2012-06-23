@@ -8,48 +8,51 @@
 
 #import "UniversalCodingTests.h"
 #import "UniversalCoding.h"
+#import "TestClass.h"
 
 @implementation UniversalCodingTests
 {
-    UniversalCoding *cod;
+  //  UniversalCoding *cod;
     id coderMock;
+    
+    TestClass* tc;
 }
 
 - (void)setUp
 {
     [super setUp];
-    cod = [UniversalCoding new];
+//    cod = [UniversalCoding new];
 }
 
 - (void)tearDown
 {
    // [uc verify];
     
-    [cod release];
+  //  [cod release];
     [super tearDown];
 }
-
+/*
 - (void)testGetProperty
 {
     STAssertThrows([cod getPropertys:nil],@"should throw exceprion!!!");
     STAssertNoThrow([cod getPropertys:[NSString new]],@"should not throw exception!!!");
-}
+}*/
 
 -(void)testInitWithCoder
 {
     coderMock = [OCMockObject mockForClass:[NSCoder class]];
-    [[[coderMock stub]andReturn:[[NSNumber alloc]initWithInt:10]] decodeIntegerForKey:@""];
-    [[[coderMock stub]andReturn:[[NSNumber alloc]initWithDouble:10.1]] decodeDoubleForKey:@""];
-    [[[coderMock stub]andReturn:[[NSNumber alloc]initWithFloat:10.2]] decodeFloatForKey:@""];
-    [[[coderMock stub]andReturn:[[NSNumber alloc]initWithBool:YES]] decodeBoolForKey:@""];
-    [[[coderMock stub]andReturn:[[NSString alloc]initWithFormat:@"qwerty"]] decodeObjectForKey:@""];
+    [[[coderMock stub] andReturnValue:[[NSNumber alloc] initWithInt:10]] decodeIntegerForKey:@"integer"];
+    [[[coderMock stub] andReturnValue:[[NSNumber alloc] initWithDouble:10.1]] decodeDoubleForKey:@"b"];
+    [[[coderMock stub] andReturnValue:[[NSNumber alloc] initWithFloat:10.2]] decodeFloatForKey:@"c"];
+   // [[[coderMock stub] andReturnValue:[[NSNumber alloc] initWithBool:YES]] decodeBoolForKey:@"d"];
+    [[[coderMock stub] andReturn:[[NSString alloc] initWithFormat:@"qwerty"]] decodeObjectForKey:@"str"];
+    tc = [[TestClass alloc ] initWithCoder:coderMock];
     
-    [cod initWithCoder:coderMock];
-    NSLog(@"%a",cod);
-    
+    STAssertTrue(tc.a == 10,@"Int doesn't work!");
+    STAssertTrue(tc.b == 10.1,@"Double doesn't work");
+    STAssertTrue(tc.c == 10.2,@"Float doesn't work");
+  //  STAssertTrue(tc.d == YES,@"Bool doesn't work");
+    STAssertTrue([tc.str isEqualToString:@"qwerty"],@"NSString doesn't work");
 }
-
-/*error: testInitWithCoder (UniversalCodingTests) failed: +[OCMConstraint any]: unrecognized selector sent to class 0x67a0788
-*/
 
 @end

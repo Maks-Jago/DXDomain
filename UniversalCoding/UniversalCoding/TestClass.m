@@ -10,19 +10,6 @@
 
 @implementation TestClass
 
-@synthesize string=_string;
-@synthesize num=_num;
-
-//-(TestClass*)init
-//{
-//    self = [super init];
-//    if(self)
-//    {
-//        db = 15.2;
-//        id a = [self valueForKey:@"db"];
-//        NSLog(@"%@",a);
-//    }
-//    return self;
-//}
+@synthesize integer,str,a,b,c;//,d;
 
 @end

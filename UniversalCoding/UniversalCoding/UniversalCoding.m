@@ -148,6 +148,7 @@
             if([[values objectAtIndex:i]isEqualToString:@"int"])
             {
                 [self setValue:[[NSNumber alloc] initWithInt:[decoder decodeIntegerForKey:[keys objectAtIndex:i]]] forKey:[keys objectAtIndex:i]];
+//                [decoder decodeint];
             }
             else if ([[values objectAtIndex:i]isEqualToString:@"double"]) 
             {
@@ -165,9 +166,7 @@
             {
                 [self setValue:[decoder decodeObjectForKey:[keys objectAtIndex:i]] forKey:[keys objectAtIndex:i]];
             }
-    
         }
-        
     }
     return self;
 }
