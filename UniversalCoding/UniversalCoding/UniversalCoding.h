@@ -9,15 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <objc/objc-runtime.h>
 
-@interface UniversalCoding : NSObject
-{
-    NSString* str;
-    int a;
-    double b;
-    float c;
-    BOOL d;
-    NSInteger someIntnum;
-}
+@interface UniversalCoding : NSObject <NSCoding>
 
 - (NSDictionary*)getPropertys:(id) object;
 - (NSDictionary*)getIvars:(id) object;
